@@ -242,29 +242,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="card">
-                  <div class="card-header" id="headingTwo">
-                    <h2 class="mb-0">
-                      <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        Blockchain
-                      </button>
-                    </h2>
-                  </div>
-                  <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                    <div class="card-body">
-                      <div class="tab-container">
-                        <p>Going ‘mobile’ is a no-brainer in this day and age, but it’s important you go mobile for the right reasons. We use both native and cross-platform solutions to create apps that function on both iOS and Android.</p>
-                        <h4>Areas of expertise</h4>
-                        <ul>
-                          <li>iOS (Swift and Objective-C)</li>
-                          <li>Android (Java and Kotlin)</li>
-                          <li>React Native</li>
-                          <li>Flutter</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+               
                 <div class="card">
                   <div class="card-header" id="headingThree">
                     <h2 class="mb-0">
@@ -441,6 +419,7 @@
 <script src="js/scrolling-nav.js"></script>
 <script src="js/velocity.min.js"></script>
 <script src="js/custom.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 <script>    
 
 jQuery('body').click(function(event) {
@@ -454,5 +433,30 @@ $(window).scroll(function(){
 });
 
 </script>
+<script>
+  var app = angular.module('myApp', []);
+  app.controller('myCtrl', function($scope, $http) {
+    $scope.emailSend = (...status) => {
+      //alert()
+     if(!status[1] || status[1] == ''){
+       alert("Please enter email.")
+     } else if(!status[0] || status[0] ==''){
+       alert('Please enter name.')
+     } else{
+      $http.post("http://3.87.228.109:3000/contactus",JSON.stringify({
+      "toSender": status[1],
+      "message": status[3],
+      "phone" : status[2],
+      "name": status[0]
+      }))
+    .then(function(response) {
+        alert("Email Send Successfully.");
+    });  
+     }
+     
+    }
+    
+  });
+  </script>
 </body>
 </html>
