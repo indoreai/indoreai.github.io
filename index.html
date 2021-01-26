@@ -443,7 +443,7 @@ $(window).scroll(function(){
      } else if(!status[0] || status[0] ==''){
        alert('Please enter name.')
      } else{
-      $http.post("https://ec2-3-87-228-109.compute-1.amazonaws.com:3000/contactus",JSON.stringify({
+      $http.post("https://3.87.228.109:3000/contactus",JSON.stringify({
       "toSender": status[1],
       "message": status[3],
       "phone" : status[2],
