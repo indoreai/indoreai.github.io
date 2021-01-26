@@ -352,20 +352,20 @@
             <div class="address">
               <h5>Indore(Head Office)
               </h5>
-              <p class="cname">IndoreAI Technologies</p>
+              <p class="cname">IndoreAI Solutions</p>
               <p>101 Platinum plaza Pu 4, <br>Behind C21 Mall, Scheme 54 PU4,<br> Indore, Madhya Pradesh 452010</p>
             </div>
 
             <div class="address">
               <h5>Pune</h5>
-              <p class="cname">IndoreAI Technologies</p>
+              <p class="cname">IndoreAI Solutions</p>
               <p>A-903 Eisha Zenith Society, <br> Survey No. 95/2, 95/3. <br> Tathawade, Pune, Maharashtra 411033</p>
              
             </div>
 
             <div class="address">
               <h5>Mumbai</h5>
-              <p class="cname">IndoreAI Technologies</p>
+              <p class="cname">IndoreAI Solutions</p>
               <p>504 Niti apartment. <br> Behind new era cinema. Underai road. <br> Malad West Mumbai 400064</p>
              
             </div>
@@ -378,25 +378,25 @@
               </div>
           </div>
         </div>
-        <div class="col-lg-5 contact-box-right">
+        <div class="col-lg-5 contact-box-right" ng-app="myApp" ng-controller="myCtrl">
           <div class="form-group">
           <span class="icon"><i class="fa fa-user-o" aria-hidden="true"></i></span>
-            <input type="text" maxlength="30" class="form-control" placeholder="Name" autocomplete="off">
+            <input type="text" maxlength="30" class="form-control" placeholder="Name" autocomplete="off" ng-model="name" id="name">
           </div>
           <div class="form-group">
-            <input type="email" maxlength="30" class="form-control" placeholder="Email" autocomplete="off">
+            <input type="email" maxlength="30" class="form-control" placeholder="Email" ng-model="email" autocomplete="off" id="email">
             <span class="icon"><i class="fa fa fa-envelope-o" aria-hidden="true"></i></span>
           </div>
           <div class="form-group">
-            <input type="text" maxlength="14" class="form-control" placeholder="Phone Number(optional)" autocomplete="off">
+            <input type="text" maxlength="14" class="form-control" ng-model="phone" placeholder="Phone Number(optional)" autocomplete="off" id="phone">
             <span class="icon"><i class="fa fa-phone" aria-hidden="true"></i></span>
           </div>
           <div class="form-group">
-            <textarea class="form-control textarea" rows="6" maxlength="300" placeholder="Message(optional)" spellcheck="false"></textarea>
+            <textarea class="form-control textarea" rows="6" ng-model="message" maxlength="300" placeholder="Message(optional)" spellcheck="false"></textarea>
             <span class="icon"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></span>
           </div>
           <div class="form-group text-center">
-            <input type="submit" value="Submit" class="btn">
+            <input type="submit" value="Submit" ng-click="emailSend(name, email, phone,message)" class="btn">
           </div>
         </div>
       </div>
