@@ -471,7 +471,7 @@ $(window).scroll(function(){
      } else if(!status[0] || status[0] ==''){
        alert('Please enter name.')
      } else{
-      $http.post("https://morning-savannah-94307.herokuapp.com/contactus",JSON.stringify({
+      $http.post("http://3.87.228.109:3000/contactus",JSON.stringify({
       "toSender": status[1],
       "message": status[3],
       "phone" : status[2],
